@@ -2,12 +2,11 @@
 //TO KILL KINDERBOT, USE ctrl + C IN TERMINAL
 
 const Discord = require('discord.js');
+require('dotenv').config();
 const bot = new Discord.Client(); //most people use client = new Discord.Client so 'bot' is actually referred to as such in most tutorials
-const auth = process.env.AUTH; //requires you to enter bot token in ".env" file as AUTH=yourbottoken
 const version = '20.8.1'; //year.month.revision
 const fs = require("fs");
-require('dotenv').config();
-
+const auth = process.env.BOT_TOKEN;; //RENAME ".env_sample" to ".env" and enter bot token in file
 bot.storageTest = require("./storageTest.json")
 bot.charSheets = require("./charSheets.json")
 
@@ -17,7 +16,7 @@ bot.on('ready', () => {
     console.log('KinderBot version ' + version + ' ready for action!')
 });
 
-bot.login(auth);
+bot.login(auth); 
 
 const prefix = '?';
 
