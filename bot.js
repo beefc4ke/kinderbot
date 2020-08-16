@@ -3,9 +3,10 @@
 
 const Discord = require('discord.js');
 const bot = new Discord.Client(); //most people use client = new Discord.Client so 'bot' is actually referred to as such in most tutorials
-const auth = "NjkxNDE1NDc0MDc1ODYxMDM1.XnjAsw.TbsrXy7sy1dxGj8owhMyyWZJd7c";
-const version = '20.6.2'; //year.month.revision
+const auth = process.env.AUTH; //requires you to enter bot token in ".env" file as AUTH=yourbottoken
+const version = '20.8.1'; //year.month.revision
 const fs = require("fs");
+require('dotenv').config();
 
 bot.storageTest = require("./storageTest.json")
 bot.charSheets = require("./charSheets.json")
